@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Inventory Management</h1>
+        <div class="form">
+            <label for="productName">Product Name</label>
+            <input type="text" id="productName" placeholder="Enter product name">
+        
+            <label for="productSKU">Product SKU</label>
+            <input type="text" id="productSKU" placeholder="Enter product SKU">
+        
+            <label for="productTotalQuantity">Total Quantity</label>
+            <input type="number" id="productTotalQuantity" placeholder="Enter total quantity">
+        
+            <label for="productRemainingQuantity">Remaining Quantity</label>
+            <input type="number" id="productRemainingQuantity" placeholder="Enter remaining quantity">
+        
+            <button onclick="addProduct()">Add Product</button>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search by Name or SKU" oninput="searchInventory()">
+        </div>
+        <div class="inventory-list">
+            <h2>Inventory List</h2>
+            <button onclick="downloadExcel()" class="download-button">Download Excel</button>
+            <ul id="inventoryItems"></ul>
+            <div class="pagination">
+                <button id="prevPage" onclick="prevPage()">Previous</button>
+                <span id="pageInfo"></span>
+                <button id="nextPage" onclick="nextPage()">Next</button>
+            </div>
+        </div>
+        <!-- WhatsApp Share Button -->
+        <button id="whatsappShare" class="whatsapp-button" onclick="shareOnWhatsApp()">Share on WhatsApp</button>
+        <!-- Include SheetJS library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>
